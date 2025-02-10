@@ -36,44 +36,48 @@
     </div>
     
     <!-- AddIncomeModal -->
-    <div id="addIncomeModal" class="border-2 border-black w-[70%] p-5 self-center absolute bg-white z-50 top-[50%] translate-y-[-50%] hidden">
-        <div class="flex justify-between items-center">
-            <h1 class="text-2xl">Add Income</h1>
-            <button id="closeAddIncomeBtn" class="border-2 rounded-lg p-2">x</button>
-        </div>
-        <div class="flex flex-col md:flex-row justify-evenly">
-            <div>
-                <h1>Income Title</h1>
-                <input id="incomeTitle" type="text" maxlength="12" class="border-2 border-black">
-            </div>
-            <div>
-                <h1>Income Value</h1>
-                <input id="incomeValue" type="number" maxlength="12" class="border-2 border-black">
-            </div>
-        </div>
-        <div class="flex justify-end">
-            <button id="confirmIncomeBtn" class="border-2 rounded-lg border-black bg-green-500 mt-2 px-2">Add Income</button>
-        </div>
-    </div>
+     <div id="addIncomeModal" class="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 flex justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full bg-[rgb(0,0,0,0.4)] hidden">
+         <div class="border-2 border-black w-[70%] p-5 self-center relative bg-white">
+             <div class="flex justify-between items-center">
+                 <h1 class="text-2xl">Add Income</h1>
+                 <button id="closeAddIncomeBtn" class="border-2 rounded-lg p-2">x</button>
+             </div>
+             <div class="flex flex-col md:flex-row justify-evenly">
+                 <div>
+                     <h1>Income Title</h1>
+                     <input id="incomeTitle" type="text" maxlength="12" class="border-2 border-black">
+                 </div>
+                 <div>
+                     <h1>Income Value</h1>
+                     <input id="incomeValue" type="number" maxlength="12" class="border-2 border-black">
+                 </div>
+             </div>
+             <div class="flex justify-end">
+                 <button id="confirmIncomeBtn" class="border-2 rounded-lg border-black bg-green-500 mt-2 px-2">Add Income</button>
+             </div>
+         </div>
+     </div>
 
     <!-- AddExpenseModal -->
-    <div id="addExpenseModal" class="border-2 border-black w-[70%] p-5 self-center absolute bg-white z-50 top-[50%] translate-y-[-50%] hidden">
-        <div class="flex justify-between items-center">
-            <h1 class="text-2xl">Add Expense</h1>
-            <button id="closeAddExpenseBtn" class="border-2 rounded-lg p-2">x</button>
-        </div>
-        <div class="flex flex-col md:flex-row justify-evenly">
-            <div>
-                <h1>Expense Title</h1>
-                <input id="expenseTitle" type="text" maxlength="12" class="border-2 border-black">
+    <div id="addExpenseModal" class="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 flex justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full bg-[rgb(0,0,0,0.4)] hidden">
+        <div class="border-2 border-black w-[70%] p-5 self-center relative bg-white">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl">Add Expense</h1>
+                <button id="closeAddExpenseBtn" class="border-2 rounded-lg p-2">x</button>
             </div>
-            <div>
-                <h1>Expense Value</h1>
-                <input id="expenseValue" type="number" maxlength="12" class="border-2 border-black">
+            <div class="flex flex-col md:flex-row justify-evenly">
+                <div>
+                    <h1>Expense Title</h1>
+                    <input id="expenseTitle" type="text" maxlength="12" class="border-2 border-black">
+                </div>
+                <div>
+                    <h1>Expense Value</h1>
+                    <input id="expenseValue" type="number" maxlength="12" class="border-2 border-black">
+                </div>
             </div>
-        </div>
-        <div class="flex justify-end">
-            <button id="confirmExpenseBtn" class="border-2 rounded-lg border-black bg-red-400 mt-2 px-2">Add Expense</button>
+            <div class="flex justify-end">
+                <button id="confirmExpenseBtn" class="border-2 rounded-lg border-black bg-red-400 mt-2 px-2">Add Expense</button>
+            </div>
         </div>
     </div>
 

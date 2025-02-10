@@ -23,29 +23,21 @@ const confirmExpenseBtn = document.getElementById("confirmExpenseBtn");
 
 addIncomeBtn.addEventListener('click', () => {
     Show(addIncomeModal);
-    Hide(addIncomeBtn);
-    Hide(addExpenseBtn);
     console.log("buton works")
 });
 
 closeAddIncomeBtn.addEventListener('click', () => {
     Hide(addIncomeModal);
-    Show(addIncomeBtn);
-    Show(addExpenseBtn);
     console.log("button works")
 })
 
 addExpenseBtn.addEventListener('click', () => {
     Show(addExpenseModal);
-    Hide(addIncomeBtn);
-    Hide(addExpenseBtn);
     console.log("buton works")
 });
 
 closeAddExpenseBtn.addEventListener('click', () => {
     Hide(addExpenseModal);
-    Show(addIncomeBtn);
-    Show(addExpenseBtn);
     console.log("button works")
 })
 
