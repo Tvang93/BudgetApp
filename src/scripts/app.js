@@ -79,7 +79,7 @@ const CreateIncomeList = () => {
 
     savedIncomeList.map((incomes) => {
         let savedIncomeBox = document.createElement('div');
-        savedIncomeBox.classList = "flex justify-between"
+        savedIncomeBox.classList = "flex justify-between overflow-x-scroll w-[100%]"
 
         let div2 = document.createElement('div');
         div2.classList = "flex gap-2"
@@ -137,7 +137,7 @@ const CreateExpenseList = () => {
 
     savedExpenseList.map((expenses) => {
         let savedExpenseBox = document.createElement('div');
-        savedExpenseBox.classList = "flex justify-between"
+        savedExpenseBox.classList = "flex justify-between overflow-x-scroll w-[100%]"
 
         let div2 = document.createElement('div');
         div2.classList = "flex gap-2"
@@ -177,7 +177,7 @@ const SetMyBudget = () => {
     let total = Number(totalExpense.innerText)+Number(totalIncome.innerText);
 
     myBudget.innerText = total.toFixed(2);
-    
+
     if(total > 0){
         myBudget.classList.add("text-green-600");
         myBudget.classList.remove("text-red-600");
@@ -187,6 +187,14 @@ const SetMyBudget = () => {
     }else{
         myBudget.classList.remove("text-red-600");
         myBudget.classList.remove("text-green-600");
+    }
+
+    if(myBudget.innerText.length > 6){
+        myBudget.classList.add("text-3xl")
+        myBudget.classList.remove("text-5xl")
+    }else{
+        myBudget.classList.add("text-5xl")
+        myBudget.classList.remove("text-3xl")
     }
 }
 
