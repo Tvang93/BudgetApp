@@ -28,6 +28,7 @@ const expenseValue = document.getElementById("expenseValue");
 const confirmExpenseBtn = document.getElementById("confirmExpenseBtn");
 
 let budgetObject = {
+    Id: 0,
     Title: "",
     Value: 0
 }
@@ -65,6 +66,7 @@ confirmIncomeBtn.addEventListener('click', () => {
     if(incomeTitle.value.trim() !== '' && incomeValue.value.trim() !== ''){
         budgetObject.Title = incomeTitle.value;
         budgetObject.Value = incomeValue.value;
+        budgetObject.Id = Date.now()
         console.log(budgetObject)
         SaveIncome(budgetObject)
         CreateIncomeList();
@@ -87,10 +89,14 @@ const CreateIncomeList = () => {
         let removeButton = document.createElement('button');
         removeButton.classList = "border-2 rounded-lg px-2"
         removeButton.innerText = "-"
-        removeButton.addEventListener('click', function(){
+        removeButton.addEventListener('click', () => {
             RemoveFromSavedIncome(incomes);
             savedIncomeBox.remove();
-            CreateIncomeList()
+            incomeCounter = savedIncomeList
+                .filter(inc => inc.Id !== incomes.Id)
+                .reduce((sum, inc) => sum + Number(inc.Value), 0);
+            totalIncome.innerText = incomeCounter.toFixed(2);
+            SetMyBudget();
         });
 
 
@@ -123,6 +129,7 @@ confirmExpenseBtn.addEventListener('click', () => {
     if(expenseTitle.value.trim() !== '' && expenseValue.value.trim() !== ''){
         budgetObject.Title = expenseTitle.value;
         budgetObject.Value = expenseValue.value;
+        budgetObject.Id = Date.now()
         console.log(budgetObject)
         SaveExpenses(budgetObject)
         CreateExpenseList();
@@ -145,10 +152,14 @@ const CreateExpenseList = () => {
         let removeButton = document.createElement('button');
         removeButton.classList = "border-2 rounded-lg px-2"
         removeButton.innerText = "-"
-        removeButton.addEventListener('click', function(){
+        removeButton.addEventListener('click', () => {
             RemoveFromSavedExpenses(expenses);
             savedExpenseBox.remove();
-            CreateExpenseList()
+            expenseCounter = savedExpenseList
+                .filter(exp => exp.Id !== expenses.Id)
+                .reduce((sum, exp) => sum + Number(exp.Value), 0) * -1;
+            totalExpense.innerText = expenseCounter.toFixed(2);
+            SetMyBudget();
         });
 
 

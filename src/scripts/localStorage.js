@@ -14,11 +14,12 @@ const GetSavedIncomeFromLocalStorage = () => {
   return JSON.parse(localStorageData);
 };
 
-const RemoveFromSavedIncome = (income) => {
-  let localStorageData = GetSavedIncomeFromLocalStorage();
-  let nameIndex = localStorageData.indexOf(income);
-  localStorageData.splice(nameIndex, 1);
-  localStorage.setItem("SavedIncome", JSON.stringify(localStorageData));
+const RemoveFromSavedIncome = (incomeToRemove) => {
+    let localStorageData = GetSavedIncomeFromLocalStorage();
+    const updatedIncomes = localStorageData.filter(income => 
+        income.Id !== incomeToRemove.Id
+    );
+    localStorage.setItem("SavedIncome", JSON.stringify(updatedIncomes));
 };
 
 const SaveExpenses = (Expenses) => {
@@ -37,11 +38,12 @@ const GetSavedExpensesFromLocalStorage = () => {
   return JSON.parse(localStorageData);
 };
 
-const RemoveFromSavedExpenses = (Expenses) => {
-  let localStorageData = GetSavedExpensesFromLocalStorage();
-  let nameIndex = localStorageData.indexOf(Expenses);
-  localStorageData.splice(nameIndex, 1);
-  localStorage.setItem("SavedExpenses", JSON.stringify(localStorageData));
+const RemoveFromSavedExpenses = (expenseToRemove) => {
+    let localStorageData = GetSavedExpensesFromLocalStorage();
+    const updatedExpenses = localStorageData.filter(expense => 
+        expense.Id !== expenseToRemove.Id
+    );
+    localStorage.setItem("SavedExpenses", JSON.stringify(updatedExpenses));
 };
 
 export {
